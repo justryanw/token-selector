@@ -33,7 +33,7 @@ export default function App() {
         <div className='selectedTokens'>
           {
             tokens.filter(({ selected }) => selected)
-              .map(({ iconUrl }) => <img src={iconUrl}></img>)
+              .map(({ id, iconUrl }) => <img key={id} src={iconUrl}></img>)
           }
         </div>
         <button onClick={toggleDropdown}>show currencies</button>
