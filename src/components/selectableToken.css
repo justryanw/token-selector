@@ -1,0 +1,39 @@
+.selectable-token {
+    user-select: none;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.selectable-token * {
+    margin: auto 0;
+    padding: 10px;
+}
+
+.selectable-token input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    outline: 2px solid lightgray;
+    border-radius: 0.2em;
+    transition: 0.3s;
+    padding: 0px;
+}
+
+.checkmark div {
+    font-size: 10px;
+    margin: auto;
+}
+
+.selectable-token input:checked~.checkmark {
+    outline: 2px solid #40AC8E;
+    background-color: #40AC8E;
+}

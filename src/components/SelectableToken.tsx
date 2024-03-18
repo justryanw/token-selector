@@ -1,4 +1,5 @@
 import { Token } from "./TokensSelector"
+import './selectableToken.css';
 
 interface SelectableTokenProps {
     token: Token,
@@ -6,10 +7,17 @@ interface SelectableTokenProps {
 }
 
 export function SelectableToken({ token, onSelectionChange }: SelectableTokenProps) {
+    const { id, name, ticker, iconUrl, selected } = token;
+
     return (
-        <div onClick={() => onSelectionChange(token.id)}>
-            <input type="checkbox" checked={token.selected} />
-            <span> {token.name} </span>
+        <div className="selectable-token" onClick={() => onSelectionChange(id)}>
+            <input type="checkbox" checked={selected} />
+            <div className="checkmark">
+                {/* <div>✓</div> */}
+            </div>
+            <img src={iconUrl} alt="" />
+            <div>{name}</div>
+            <div>{ticker}</div>
         </div>
     )
 }

@@ -10,14 +10,16 @@ interface TokenListProps {
 export function TokenList({ tokens, handleSelectionChange }: TokenListProps) {
     const [search, setSearch] = useState("");
 
-    const selectableTokenList = tokens
-        .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
-        .map((token) => <SelectableToken key={token.id} token={token} onSelectionChange={handleSelectionChange} />);
+    const filteredTokens = tokens
+        .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()));
+
+
+    const selectableTokenList = filteredTokens.map((token) => <SelectableToken key={token.id} token={token} onSelectionChange={handleSelectionChange} />);
 
     return (
-        <div>
-            <input value={search} onChange={e => setSearch(e.target.value)} />
-            <div> {selectableTokenList} </div>
+        <div className={"token-list"}>
+            <input className={`token-search ${filteredTokens.length !== 0 && "bottom-seperator"}`} value={search} onChange={e => setSearch(e.target.value)} />
+            <div className="token-list-inner"> {selectableTokenList} </div>
         </div>
     );
 };

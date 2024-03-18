@@ -7,13 +7,30 @@
 body {
     background: #ffffff;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.selectedTokens{
+.selected-tokens {
     display: flex;
 }
 
 img {
     width: 64px;
     height: 64px;
+}
+
+.token-list {
+    box-shadow: 0 0 8px lightgray;
+    border-radius: 0.3em;
+    outline: 2px solid lightgray;
+}
+
+.token-search {
+    outline: none;
+    border: none;
+}
+
+.bottom-seperator {
+    box-shadow: 0 2px lightgray;
 }

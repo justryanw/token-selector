@@ -27,9 +27,9 @@ export function TokenSelector() {
 
 
     return (
-        <>
+        <div className="token-selector">
             <p>Accepted Currencies</p>
-            <div className='selectedTokens'>
+            <div className='selected-tokens'>
                 {tokens.filter(({selected}) => selected).map(({ id, iconUrl }) => <img key={id} src={iconUrl}></img>)}
             </div>
             <div>
@@ -37,6 +37,6 @@ export function TokenSelector() {
                 <button onClick={toggleDropdown}>show currencies</button>
             </div>
             {dropdown && <TokenList tokens={tokens} handleSelectionChange={handleSelectionChange} />}
-        </>
+        </div>
     );
 }
