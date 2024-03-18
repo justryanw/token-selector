@@ -5,7 +5,15 @@
 }
 
 body {
-    background: #242424;
-    color: #fff;
+    background: #ffffff;
     margin: 0;
+}
+
+.selectedTokens{
+    display: flex;
+}
+
+img {
+    width: 64px;
+    height: 64px;
 }
