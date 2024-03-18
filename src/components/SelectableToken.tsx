@@ -1,4 +1,4 @@
-import { Token } from "../App";
+import { Token } from "./TokensSelector"
 
 interface SelectableTokenProps {
     token: Token,
@@ -7,9 +7,9 @@ interface SelectableTokenProps {
 
 export function SelectableToken({ token, onSelectionChange }: SelectableTokenProps) {
     return (
-        <div>
-            <input type="checkbox" checked={token.selected} onChange={() => onSelectionChange(token.id)}/>
-            <div> {token.name} </div>
+        <div onClick={() => onSelectionChange(token.id)}>
+            <input type="checkbox" checked={token.selected} />
+            <span> {token.name} </span>
         </div>
     )
 }
